@@ -1,0 +1,22 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/iris.data
+    - src/train.py
+    outs:
+    - data/predict.txt
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/iris.data
+    - data/predict.txt
+    - src/evaluate.py
+    metrics:
+    - data/metrics.json
+    plots:
+    - data/classes.csv:
+        cache: false
+        template: confusion
+        x: actual
+        y: predicted

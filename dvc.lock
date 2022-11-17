@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/iris.data
+      md5: 42615765a885ddf54427f12c34a0a070
+      size: 4551
+    - path: src/train.py
+      md5: 23005dbb5dba6a7eb3908f5490cd5a44
+      size: 414
+    outs:
+    - path: data/predict.txt
+      md5: 0ffae0b531413a05920ffcedcdc1b79e
+      size: 448
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/iris.data
+      md5: 42615765a885ddf54427f12c34a0a070
+      size: 4551
+    - path: data/predict.txt
+      md5: 0ffae0b531413a05920ffcedcdc1b79e
+      size: 448
+    - path: src/evaluate.py
+      md5: bd2a9c487e9ef09efc6f714bf2c90910
+      size: 1863
+    outs:
+    - path: data/classes.csv
+      md5: 488158bb85520dbec5d7e3b1d244b9fe
+      size: 768
+    - path: data/metrics.json
+      md5: f3635956b4654c1c888a128a2d95ca03
+      size: 95
