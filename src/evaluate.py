@@ -1,7 +1,6 @@
 import csv
 import json
-from collections import defaultdict
-from sklearn.metrics import precision_recall_fscore_support, confusion_matrix, f1_score
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.preprocessing import LabelEncoder
 
 

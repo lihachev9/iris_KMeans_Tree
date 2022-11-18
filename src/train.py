@@ -16,13 +16,13 @@ with open("data/iris.data") as f:
 
 y = LabelEncoder().fit_transform(y)
 
-kmeans = DecisionTreeClassifier().fit(X, y)
-y_pred = kmeans.predict(X)
+clf = DecisionTreeClassifier().fit(X, y)
+y_pred = clf.predict(X)
 with open("data/predict.txt", 'w') as f:
     print(*y_pred, sep='\n', end='', file=f)
 
 feature_name = ["sepal_length", "sepal_width", "petal_length", "petal_width"]
-feature_importance = kmeans.feature_importances_
+feature_importance = clf.feature_importances_
 
 with open("data/importances.csv", "w", newline='') as result:
     writer = csv.writer(result)
