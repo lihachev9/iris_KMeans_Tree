@@ -6,6 +6,12 @@ stages:
     - src/train.py
     outs:
     - data/predict.txt
+    plots:
+    - data/importances.csv:
+        cache: false
+        template: bar_horizontal
+        x: feature_importance
+        y: feature_name
   evaluate:
     cmd: python src/evaluate.py
     deps:
