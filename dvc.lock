@@ -23,8 +23,8 @@ stages:
       md5: 0ffae0b531413a05920ffcedcdc1b79e
       size: 448
     - path: src/evaluate.py
-      md5: bd2a9c487e9ef09efc6f714bf2c90910
-      size: 1863
+      md5: b7359a5abdb0680721cb8d417cdd2578
+      size: 1735
     outs:
     - path: data/classes.csv
       md5: 488158bb85520dbec5d7e3b1d244b9fe

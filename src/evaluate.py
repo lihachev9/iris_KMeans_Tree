@@ -1,7 +1,7 @@
 import csv
 import json
 from collections import defaultdict
-from sklearn.metrics import precision_recall_fscore_support, confusion_matrix, f1_score
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -15,7 +15,6 @@ def cluster2label(y, y_pred):
         clusters[c].append((idx, y_pred[idx]))
 
     cluster_label_counts = dict()
-
     replcae_class = {}
 
     for c in range(num_clusters):
@@ -33,16 +32,9 @@ def cluster2label(y, y_pred):
     return y_pred
 
 
-y = []
-
 with open("data/iris.data") as f:
-    for line in f:
-        line = line.strip().split(',')
-        if line == ['']:
-            continue
-        y.append(line[-1])
+    y = [line.split(',')[-1] for line in f.read().split('\n') if line]
 
-classes = list(set(y))
 y = LabelEncoder().fit_transform(y)
 
 with open("data/predict.txt") as f:
