@@ -1,14 +1,8 @@
 from sklearn.cluster import KMeans
 
 
-X = []
-
 with open("data/iris.data") as f:
-    for line in f:
-        line = line.strip().split(',')
-        if line == ['']:
-            continue
-        X.append(list(map(float, line[:-1])))
+    X = [list(map(float, line.split(',')[:-1])) for line in f.read().split('\n') if line]
 
 kmeans = KMeans(n_clusters=3, random_state=0).fit(X)
 y_pred = kmeans.predict(X)

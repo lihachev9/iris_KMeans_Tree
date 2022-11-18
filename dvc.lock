@@ -7,8 +7,8 @@ stages:
       md5: 42615765a885ddf54427f12c34a0a070
       size: 4551
     - path: src/train.py
-      md5: 23005dbb5dba6a7eb3908f5490cd5a44
-      size: 414
+      md5: b41895eed967dd31206dab5815229ed9
+      size: 339
     outs:
     - path: data/predict.txt
       md5: 0ffae0b531413a05920ffcedcdc1b79e
