@@ -7,8 +7,8 @@ stages:
       md5: 42615765a885ddf54427f12c34a0a070
       size: 4551
     - path: src/train.py
-      md5: b41895eed967dd31206dab5815229ed9
-      size: 339
+      md5: 3cb3678d7dd7604c32e12a9585279ec4
+      size: 340
     outs:
     - path: data/predict.txt
       md5: 0ffae0b531413a05920ffcedcdc1b79e
@@ -23,8 +23,8 @@ stages:
       md5: 0ffae0b531413a05920ffcedcdc1b79e
       size: 448
     - path: src/evaluate.py
-      md5: b7359a5abdb0680721cb8d417cdd2578
-      size: 1735
+      md5: 37d1a07a617e78c75a47a6b1993f4b68
+      size: 1737
     outs:
     - path: data/classes.csv
       md5: 488158bb85520dbec5d7e3b1d244b9fe
